@@ -1,0 +1,19 @@
+create table Products(
+id bigint not null,
+name varchar(100) not null,
+primary key (id)
+);
+
+create table Attributes(
+id bigint not null,
+name varchar(100) not null,
+primary key (id)
+);
+
+create table Categories(
+id bigint not null,
+name varchar(100) not null,
+primary key (id)
+);
+
+	
