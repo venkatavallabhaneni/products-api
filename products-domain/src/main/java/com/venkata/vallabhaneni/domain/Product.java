@@ -1,4 +1,4 @@
-package com.venkata.vallabhaneni.product.domain;
+package com.venkata.vallabhaneni.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-@Entity
+@Entity(name="products")
 public class Product {
 
 	@Id
