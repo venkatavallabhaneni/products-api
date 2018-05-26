@@ -1,0 +1,37 @@
+version: '3.1'
+services:
+  postgresdb:
+     
+    container_name:  products-api-postgres-db
+    image: postgres:latest
+    ports:
+         - "5000:5432"
+        
+    environment:
+           - POSTGRES_PASSWORD=vallabhaneni
+           - POSTGRES_USER=postgres
+           - POSTGRES_DB=products
+    command: postgres
+    
+  web:
+    container_name: products-api-service
+    build:
+    image: vallabhaneni1982/products-api-spring-boot-docker:1.0-SNAPSHOT
+    depends_on:
+      - postgresdb
+    ports:
+      - "9000:9080"
+    links:
+      - postgresdb
+    environment:     
+      DATABASE_HOST: postgresdb
+      DATABASE_PORT: 5432
+      DATABASE_NAME: products
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: vallabhaneni
+      
+    
+     
+     
+     
+   
